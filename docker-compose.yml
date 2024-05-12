@@ -18,6 +18,8 @@ services:
     volumes:
       - ./bot:/usr/src/app/bot
       - ./migrations:/usr/src/app/migrations
+#  чтобы запустить без python -m bot (который может падать)
+#    command: /bin/sh -c "while true; do sleep 100; done"
 
   admin:
     build:
@@ -46,7 +48,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
       - POSTGRES_DB=${DB_NAME}
-      - PGDATA='/var/lib/postgresql/data/pgdata'
+      - PGDATA=/var/lib/postgresql/data/pgdata
     networks:
       - app
     volumes:

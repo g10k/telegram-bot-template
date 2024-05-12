@@ -13,6 +13,7 @@ users_commands: dict[str, dict[str, str]] = {
         "menu": "main menu with earning schemes",
         "settings": "setting information about you",
         "supports": "support contacts",
+        "kb_team": "kb-team commands",
     },
     "uk": {
         "help": "help",

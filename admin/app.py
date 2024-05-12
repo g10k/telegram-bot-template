@@ -18,7 +18,11 @@ from sqlalchemy import inspect
 from wtforms import PasswordField
 
 from admin.views.users import UserView as AppUserView
+from admin.views.kb_tokens import KbTokenView as AppKbTokenView
 from bot.database.models import UserModel as AppUserModel
+# from bot.database.models import KbTokenModel
+# from bot.database.models import TokenModel
+from bot.database.models import TokenModel as AppKbTokenModel
 
 if TYPE_CHECKING:
     from werkzeug.wrappers.response import Response
@@ -179,6 +183,28 @@ admin.add_view(
         menu_icon_value="fa-users",
         name="Users",
         endpoint="users",
+    ),
+)
+
+admin.add_view(
+    AppUserView(
+        AppUserModel,
+        db.session,
+        menu_icon_type=ICON_TYPE_FONT_AWESOME,
+        menu_icon_value="fa-users",
+        name="Users",
+        endpoint="users2",
+    ),
+)
+
+admin.add_view(
+    AppKbTokenView(
+        AppKbTokenModel,
+        db.session,
+        menu_icon_type=ICON_TYPE_FONT_AWESOME,
+        menu_icon_value="fa-users",
+        name="Kb-Token",
+        endpoint="kb-tokens",
     ),
 )
 

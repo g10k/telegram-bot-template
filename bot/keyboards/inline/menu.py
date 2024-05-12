@@ -10,6 +10,7 @@ def main_keyboard() -> InlineKeyboardMarkup:
         [InlineKeyboardButton(text=_("premium button"), callback_data="premium")],
         [InlineKeyboardButton(text=_("info button"), callback_data="info")],
         [InlineKeyboardButton(text=_("support button"), callback_data="support")],
+        [InlineKeyboardButton(text=_("kb-team button"), callback_data="support")],
     ]
 
     keyboard = InlineKeyboardBuilder(markup=buttons)
