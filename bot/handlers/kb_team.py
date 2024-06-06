@@ -20,6 +20,19 @@ async def kb_team(message: types.Message):
     await message.answer(msg, parse_mode='markdown')
 
 
+@router.message(Command(commands=['kb-team-all']))
+async def kb_team(message: types.Message):
+    await message.answer(
+        text='общая инфа, например kb-team list - <b>список</b>',
+        parse_mode='html'
+    )
+    tokens = ['123', 'abc']  # get_tokens()
+    msg = f'Актуальный список токенов:\n\n'
+    li_items = [f'* {t}' for t in tokens]
+    msg += f'{li_items}'
+    await message.answer(msg, parse_mode='markdown')
+
+
 #
 # TODO: парсить аргументы
 @router.message(Command(commands=['kb-team-list']))
@@ -32,12 +45,15 @@ async def kb_team(message: types.Message):
     await message.answer(text=msg, parse_mode='html')
 
 
+def get_all_tokens() -> list[str]:
+    from bot.database.models import TokenModel
+
+
 def get_tokens() -> list[str]:
     s = requests.Session()
     s.get('https://kb-team.club/?do=/module&bid=auth&act=submit&login=vlasov_37&password=G51505k5kinoboom')
     response = s.get('https://kb-team.club/?do=/module&bid=auth&act=mymac')
     return parse_html(response.content.decode()).split('\n')
-
 
 
 def parse_html(html: str):

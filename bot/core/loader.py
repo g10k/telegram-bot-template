@@ -11,7 +11,7 @@ app = web.Application()
 
 token = settings.BOT_TOKEN
 
-bot = Bot(token=token, parse_mode=ParseMode.HTML)
+bot = Bot(token=token)
 
 redis_client = Redis(
     connection_pool=ConnectionPool(

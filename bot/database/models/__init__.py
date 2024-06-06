@@ -1,6 +1,6 @@
 from .base import Base
-from .user import UserModel, TokenModel
-# from .kb_token import KbTokenModel
+from .user import UserModel
+from .kb_token import TokenModel
 
-# __all__ = ["Base", "UserModel", "KbTokenModel"]
+__all__ = ["Base", "UserModel", "TokenModel"]
 

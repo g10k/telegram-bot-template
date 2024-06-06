@@ -21,7 +21,7 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         "kb_tokens",
-        sa.Column("id", sa.BigInteger(), autoincrement=False, nullable=False),
+        sa.Column("id", sa.BigInteger(), autoincrement=True, nullable=False),
         sa.Column("token", sa.String(), nullable=False),
         sa.Column("description", sa.String(), nullable=True),
         sa.Column("created_at", sa.DateTime(), server_default=sa.text("TIMEZONE('utc', now())"), nullable=False),

@@ -18,6 +18,8 @@ services:
     volumes:
       - ./bot:/usr/src/app/bot
       - ./migrations:/usr/src/app/migrations
+#    в docker файле
+#    CMD ["python", "-m", "bot"]
 #  чтобы запустить без python -m bot (который может падать)
 #    command: /bin/sh -c "while true; do sleep 100; done"
 
@@ -37,6 +39,9 @@ services:
       - bot
     volumes:
       - ./admin:/usr/src/app/admin
+#    CMD ["gunicorn", "-c", "admin/gunicorn_conf.py"]
+
+    command: gunicorn --reload -c admin/gunicorn_conf.py
 
   postgres:
     image: postgres:14-alpine

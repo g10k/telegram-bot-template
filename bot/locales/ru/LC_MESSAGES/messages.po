@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messages. VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-05-12 09:33+0000\n"
-"PO-Revision-Date: 2024-05-12 09:34+0000\n"
+"POT-Creation-Date: 2024-05-13 04:19+0000\n"
+"PO-Revision-Date: 2024-05-13 04:20+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: bot/handlers/info.py:11
 msgid "about"
-msgstr "АБАУТ!!!"
+msgstr "Абаут"
 
 #: bot/handlers/menu.py:13
 msgid "title main keyboard"
@@ -58,5 +58,9 @@ msgstr ""
 
 #: bot/keyboards/inline/menu.py:11
 msgid "info button"
+msgstr ""
+
+#: bot/keyboards/inline/menu.py:13
+msgid "kb-team button"
 msgstr ""
 

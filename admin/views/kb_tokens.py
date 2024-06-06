@@ -14,6 +14,12 @@ class KbTokenView(ModelView):
 
     # column_searchable_list = ["id", "username", "first_name", "last_name"]
     # column_filters = ["is_admin", "is_suspicious", "is_block", "is_premium", "created_at"]
+    column_editable_list = [
+        "id",
+        "token",
+        "description",
+        "created_at",
+    ]
     column_list = [
         "id",
         "token",
